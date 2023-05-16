@@ -38,3 +38,18 @@ https://github.com/synergy2411/ng-may-23
 
 - @optional
 - @Inject
+
+> to install Angular CLI Tool
+
+- npm install @angular/cli@14 -g
+- ng version
+- ng new awesome-app
+  > Routing - NO
+  > Choose -> CSS
+- cd awesome-app
+- ng serve || npm start
+
+# CLI Commands
+
+- ng generate component users
+- ng g c users
