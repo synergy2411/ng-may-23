@@ -1,0 +1,15 @@
+<ul>
+  <li>
+    <img [src]="user.image" width="150px" />
+    <br />
+    <button (click)="onMoreInfo(user.company)">More Info</button>
+
+    <h3>{{ user.firstName }} {{ user.lastName }}</h3>
+    <p>Date : {{ user.dob }}</p>
+    <p>Income : <span [innerHTML]="user.income"></span></p>
+
+    <p>Total Votes : {{ user.votes }}</p>
+
+    <input type="number" [(ngModel)]="user.votes" />
+  </li>
+</ul>
