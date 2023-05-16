@@ -57,11 +57,16 @@ const strArrayOne = getLength<Array<string>>(["Hello", "World"]);
 
 console.log("ARRAY LENGTH : ", strArrayOne);
 
-function getVolume<T extends { width: number; height: number }>(value: T) {
+interface IBOX {
+  width: number;
+  height: number;
+}
+
+function getVolume<T extends IBOX>(value: T) {
   return value.width * value.height;
 }
 
-let box = {
+let box: IBOX = {
   width: 10,
   height: 8,
 };
