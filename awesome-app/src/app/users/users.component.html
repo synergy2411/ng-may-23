@@ -1,4 +1,5 @@
 <div class="container">
+  <p>The Users component paragraph</p>
   <ul class="list-group">
     <li class="list-group-item">
       <div class="row">
@@ -9,7 +10,9 @@
           ></app-user-image>
         </div>
         <div class="col-8">
-          <app-user-info [user]="user"></app-user-info>
+          <app-user-info [user]="user">
+            <h3 class="heading">{{ user.firstName }} {{ user.lastName }}</h3>
+          </app-user-info>
         </div>
       </div>
     </li>

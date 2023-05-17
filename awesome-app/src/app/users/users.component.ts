@@ -1,12 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { IUser } from 'src/model/user';
 
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.css'],
+  encapsulation: ViewEncapsulation.Emulated,
 })
 export class UsersComponent {
-  user = {
+  user: IUser = {
     firstName: 'Bill',
     lastName: 'Gates',
     dob: new Date('Jan 23, 1965'),
