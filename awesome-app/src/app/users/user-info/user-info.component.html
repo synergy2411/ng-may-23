@@ -1,7 +1,27 @@
 <ng-content select=".heading"></ng-content>
-<p>Date : {{ user.dob }}</p>
-<p>Income : <span [innerHTML]="user.income"></span></p>
+
+<!-- <p [ngClass]="['my-border', 'my-feature']">Date : {{ user.dob }}</p> -->
+<p
+  [ngClass]="dynamicClasses"
+  (mouseenter)="toggleClass()"
+  (mouseleave)="toggleClass()"
+>
+  Date : {{ user.dob }}
+</p>
+
+<p [ngStyle]="dynamicStyles" *ngIf="user.isWorking; else ElseTemplate">
+  Income : <span [innerHTML]="user.income"></span>
+</p>
+
+<!-- Desugar If -->
+<!-- <ng-template [ngIf]="user.isWorking">
+  <p>Income  : {{ user.income }}</p>
+</ng-template> -->
 
 <p>Total Votes : {{ user.votes }}</p>
 
 <input type="number" [(ngModel)]="user.votes" />
+
+<ng-template #ElseTemplate>
+  <p>MR {{ user.lastName }} is NOT working now!</p>
+</ng-template>

@@ -1,0 +1,26 @@
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link" (click)="tab = 1">Show Comments</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" (click)="tab = 2">Add Comments</a>
+  </li>
+</ul>
+
+<section>
+  <div [ngSwitch]="tab">
+    <div *ngSwitchCase="1">
+      <div *ngIf="comments.length > 0; else noCommentTemplate">
+        <blockquote *ngFor="let comment of comments">
+          Stars : {{ comment.stars }} <br />
+          {{ comment.body }}
+          <cite class="float-end"> - {{ comment.author }}</cite>
+        </blockquote>
+      </div>
+
+      <ng-template #noCommentTemplate> Be the first to comment </ng-template>
+    </div>
+    <div *ngSwitchCase="2">2</div>
+    <div *ngSwitchDefault>Please select any tab</div>
+  </div>
+</section>

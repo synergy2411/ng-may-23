@@ -7,6 +7,7 @@ import { UsersComponent } from './users/users.component';
 import { UserImageComponent } from './users/user-image/user-image.component';
 import { UserInfoComponent } from './users/user-info/user-info.component';
 import { LifeCycleComponent } from './demo/life-cycle/life-cycle.component';
+import { UserCommentsComponent } from './users/user-comments/user-comments.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { LifeCycleComponent } from './demo/life-cycle/life-cycle.component';
     UserImageComponent,
     UserInfoComponent,
     LifeCycleComponent,
+    UserCommentsComponent,
   ],
   imports: [
     // Import the modules - FormsModule, HttpClientModule, RouterModule etc
