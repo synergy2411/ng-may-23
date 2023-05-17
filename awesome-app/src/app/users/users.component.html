@@ -3,20 +3,13 @@
     <li class="list-group-item">
       <div class="row">
         <div class="col-4">
-          <img [src]="user.image" class="img-fluid img-rounded" />
-          <br />
-          <button (click)="onMoreInfo(user.company)" class="btn btn-info">
-            More Info
-          </button>
+          <app-user-image
+            [user]="user"
+            (childEvent)="onMoreInfo($event)"
+          ></app-user-image>
         </div>
         <div class="col-8">
-          <h3>{{ user.firstName }} {{ user.lastName }}</h3>
-          <p>Date : {{ user.dob }}</p>
-          <p>Income : <span [innerHTML]="user.income"></span></p>
-
-          <p>Total Votes : {{ user.votes }}</p>
-
-          <input type="number" [(ngModel)]="user.votes" />
+          <app-user-info [user]="user"></app-user-info>
         </div>
       </div>
     </li>

@@ -1,0 +1,7 @@
+<h3>{{ user.firstName }} {{ user.lastName }}</h3>
+<p>Date : {{ user.dob }}</p>
+<p>Income : <span [innerHTML]="user.income"></span></p>
+
+<p>Total Votes : {{ user.votes }}</p>
+
+<input type="number" [(ngModel)]="user.votes" />
