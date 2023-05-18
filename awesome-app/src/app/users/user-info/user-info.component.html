@@ -6,11 +6,11 @@
   (mouseenter)="toggleClass()"
   (mouseleave)="toggleClass()"
 >
-  Date : {{ user.dob }}
+  Date : {{ user.dob | date : "dd/MM/yyyy" }}
 </p>
 
 <p [ngStyle]="dynamicStyles" *ngIf="user.isWorking; else ElseTemplate">
-  Income : <span [innerHTML]="user.income"></span>
+  Income : <span [innerHTML]="user.income | currency : 'INR'"></span>
 </p>
 
 <!-- Desugar If -->

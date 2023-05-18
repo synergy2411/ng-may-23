@@ -16,7 +16,9 @@
         </div>
         <div class="col-8">
           <app-user-info [user]="user">
-            <h3 class="heading">{{ user.firstName }} {{ user.lastName }}</h3>
+            <h3 class="heading">
+              {{ user.firstName | titlecase }} {{ user.lastName | titlecase }}
+            </h3>
           </app-user-info>
         </div>
       </div>

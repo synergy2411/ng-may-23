@@ -9,6 +9,7 @@ import { UserInfoComponent } from './users/user-info/user-info.component';
 import { LifeCycleComponent } from './demo/life-cycle/life-cycle.component';
 import { UserCommentsComponent } from './users/user-comments/user-comments.component';
 import { HighlightDirective } from './directives/highlight.directive';
+import { PipeDemoComponent } from './demo/pipe-demo/pipe-demo.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { HighlightDirective } from './directives/highlight.directive';
     LifeCycleComponent,
     UserCommentsComponent,
     HighlightDirective,
+    PipeDemoComponent,
   ],
   imports: [
     // Import the modules - FormsModule, HttpClientModule, RouterModule etc
