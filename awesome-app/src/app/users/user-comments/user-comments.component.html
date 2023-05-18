@@ -20,7 +20,9 @@
 
       <ng-template #noCommentTemplate> Be the first to comment </ng-template>
     </div>
-    <div *ngSwitchCase="2">2</div>
+    <div *ngSwitchCase="2">
+      <app-comment-form></app-comment-form>
+    </div>
     <div *ngSwitchDefault>Please select any tab</div>
   </div>
 </section>

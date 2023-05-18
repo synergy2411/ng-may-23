@@ -1,0 +1,70 @@
+<div class="row">
+  <div class="col-8 offset-2">
+    <div class="card">
+      <div class="card-header">
+        <h6 class="text-center">Add new Comment</h6>
+      </div>
+
+      <div class="card-body">
+        <form (submit)="onAddComment(f)" #f="ngForm">
+          <!-- stars -->
+          <div class="form-group mb-3">
+            <label for="stars">Stars :</label>
+            <select class="form-control" name="stars" ngModel>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+
+          <!-- body -->
+          <div class="form-group mb-3">
+            <textarea
+              name="body"
+              class="form-control"
+              rows="4"
+              ngModel
+              required
+              minlength="6"
+            ></textarea>
+          </div>
+
+          <!-- author -->
+          <div class="form-group mb-3">
+            <input
+              type="email"
+              email
+              placeholder="enter email pls"
+              name="author"
+              class="form-control"
+              ngModel
+              required
+            />
+          </div>
+
+          <!-- button -->
+          <div class="row">
+            <div class="col">
+              <div class="d-grid">
+                <button
+                  class="btn btn-success"
+                  type="submit"
+                  [disabled]="!f.valid"
+                >
+                  Add Comment
+                </button>
+              </div>
+            </div>
+            <div class="col">
+              <div class="d-grid">
+                <button class="btn btn-warning">Reset</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
