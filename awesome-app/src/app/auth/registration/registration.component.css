@@ -1,0 +1,7 @@
+.ng-dirty.ng-invalid[name="email"] {
+  background-color: rgb(223, 139, 139);
+}
+
+.ng-dirty.ng-valid[name="email"] {
+  background-color: rgb(172, 223, 128);
+}

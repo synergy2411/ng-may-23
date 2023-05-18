@@ -11,8 +11,17 @@
               type="text"
               name="email"
               class="form-control"
-              formControlName="username"
+              [formControl]="username"
             />
+
+            <div *ngIf="username.touched && username.invalid">
+              <div *ngIf="username.hasError('required')">
+                <p class="alert alert-danger">Email is mandatory field</p>
+              </div>
+              <div *ngIf="username.hasError('email')">
+                <p class="alert alert-danger">Email should be proper format</p>
+              </div>
+            </div>
           </div>
           <!-- password -->
           <div class="form-group mb-3">

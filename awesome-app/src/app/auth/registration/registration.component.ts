@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
+import {
+  FormControl,
+  FormGroup,
+  FormBuilder,
+  Validators,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-registration',
@@ -7,14 +12,17 @@ import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
   styleUrls: ['./registration.component.css'],
 })
 export class RegistrationComponent {
-  // username = new FormControl();
-  password = new FormControl();
+  username = new FormControl('', [Validators.required, Validators.email]);
+  password = new FormControl('', [
+    Validators.required,
+    Validators.minLength(6),
+  ]);
 
   registrationForm: FormGroup;
 
   constructor(private fb: FormBuilder) {
     this.registrationForm = this.fb.group({
-      username: new FormControl(),
+      username: this.username,
       password: this.password,
     });
   }
