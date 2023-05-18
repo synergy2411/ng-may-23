@@ -11,4 +11,8 @@ export class PipeDemoComponent {
       resolve('Data arrived in App');
     }, 3000);
   });
+
+  contactNumber = 987654321;
 }
+
+// ng g c demo/pipe-demo
