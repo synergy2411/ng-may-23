@@ -14,4 +14,13 @@ export class UserCommentsComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  closeForm() {
+    this.tab = 0;
+  }
+
+  addNewComment(newComment: IComment) {
+    this.comments.push(newComment);
+    this.tab = 1;
+  }
 }
