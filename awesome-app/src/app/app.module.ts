@@ -8,6 +8,7 @@ import { UserImageComponent } from './users/user-image/user-image.component';
 import { UserInfoComponent } from './users/user-info/user-info.component';
 import { LifeCycleComponent } from './demo/life-cycle/life-cycle.component';
 import { UserCommentsComponent } from './users/user-comments/user-comments.component';
+import { HighlightDirective } from './directives/highlight.directive';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { UserCommentsComponent } from './users/user-comments/user-comments.compo
     UserInfoComponent,
     LifeCycleComponent,
     UserCommentsComponent,
+    HighlightDirective,
   ],
   imports: [
     // Import the modules - FormsModule, HttpClientModule, RouterModule etc

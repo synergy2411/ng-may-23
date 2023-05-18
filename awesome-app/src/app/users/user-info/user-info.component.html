@@ -18,7 +18,7 @@
   <p>Income  : {{ user.income }}</p>
 </ng-template> -->
 
-<p>Total Votes : {{ user.votes }}</p>
+<p appHighlight favColor="yellow">Total Votes : {{ user.votes }}</p>
 
 <input type="number" [(ngModel)]="user.votes" />
 
