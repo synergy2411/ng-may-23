@@ -32,6 +32,21 @@
               class="form-control"
               [formControl]="password"
             />
+            <div *ngIf="password.touched && password.invalid">
+              <div *ngIf="password.hasError('required')">
+                <p class="alert alert-danger">Password is mandatory field</p>
+              </div>
+              <div *ngIf="password.hasError('minlength')">
+                <p class="alert alert-danger">
+                  Password must have 6 characters at least
+                </p>
+              </div>
+              <div *ngIf="password.hasError('exclamation')">
+                <p class="alert alert-danger">
+                  Password must have exclamation mark (!)
+                </p>
+              </div>
+            </div>
           </div>
           <!-- buttons -->
           <div class="form-group">
