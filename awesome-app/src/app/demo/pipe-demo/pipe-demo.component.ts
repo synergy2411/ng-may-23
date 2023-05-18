@@ -13,6 +13,19 @@ export class PipeDemoComponent {
   });
 
   contactNumber = 987654321;
+
+  filteredStatus = '';
+
+  todoCollection = [
+    { label: 'shopping', status: 'pending' },
+    { label: 'planting', status: 'completed' },
+    { label: 'insurance', status: 'pending' },
+    { label: 'grocery', status: 'completed' },
+  ];
+
+  onAddItem() {
+    this.todoCollection.push({ label: 'New Item', status: 'pending' });
+  }
 }
 
 // ng g c demo/pipe-demo

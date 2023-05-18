@@ -11,6 +11,7 @@ import { UserCommentsComponent } from './users/user-comments/user-comments.compo
 import { HighlightDirective } from './directives/highlight.directive';
 import { PipeDemoComponent } from './demo/pipe-demo/pipe-demo.component';
 import { CountryCodePipe } from './pipes/country-code.pipe';
+import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { CountryCodePipe } from './pipes/country-code.pipe';
     HighlightDirective,
     PipeDemoComponent,
     CountryCodePipe,
+    FilterPipe,
   ],
   imports: [
     // Import the modules - FormsModule, HttpClientModule, RouterModule etc

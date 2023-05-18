@@ -1,3 +1,31 @@
-<h4>Async Data : {{ asyncData | async }}</h4>
+<div class="container">
+  <h4>Async Data : {{ asyncData | async }}</h4>
 
-<p>Contact Number : {{ contactNumber | countryCode }}</p>
+  <p>Contact Number : {{ contactNumber | countryCode }}</p>
+
+  <hr />
+
+  <div class="row">
+    <div class="col-6">
+      <select class="form-control" [(ngModel)]="filteredStatus">
+        <option value="pending">Pending Tasks</option>
+        <option value="completed">Completed Tasks</option>
+      </select>
+    </div>
+    <div class="col-6">
+      <div class="d-grid">
+        <button class="btn btn-primary" (click)="onAddItem()">Add Item</button>
+      </div>
+    </div>
+  </div>
+
+  <ul class="list-group">
+    <li
+      class="list-group-item"
+      *ngFor="let todo of todoCollection | filter : filteredStatus"
+    >
+      {{ todo.label }}
+      <span class="float-end">{{ todo.status }}</span>
+    </li>
+  </ul>
+</div>
