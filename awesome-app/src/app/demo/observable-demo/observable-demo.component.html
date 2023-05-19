@@ -2,3 +2,13 @@
 
 <button class="btn btn-primary" (click)="onSubscribe()">Subscribe</button>
 <button class="btn btn-primary" (click)="onUnsubscribe()">Unsubscribe</button>
+
+<hr />
+
+<input type="text" #inputText />
+
+<button class="btn btn-secondary" #btnGenerate>Generate Observable</button>
+
+<ul>
+  <li *ngFor="let repo of repos">{{ repo.id }} - {{ repo.name }}</li>
+</ul>
