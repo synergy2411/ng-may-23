@@ -14,6 +14,9 @@ import { CountryCodePipe } from './pipes/country-code.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
 import { CommentFormComponent } from './users/comment-form/comment-form.component';
 import { RegistrationComponent } from './auth/registration/registration.component';
+import { CounterService } from './services/counter.service';
+import { DemoOneComponent } from './demo/demo-one/demo-one.component';
+import { DemoTwoComponent } from './demo/demo-two/demo-two.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +33,8 @@ import { RegistrationComponent } from './auth/registration/registration.componen
     FilterPipe,
     CommentFormComponent,
     RegistrationComponent,
+    DemoOneComponent,
+    DemoTwoComponent,
   ],
   imports: [
     // Import the modules - FormsModule, HttpClientModule, RouterModule etc
@@ -37,7 +42,7 @@ import { RegistrationComponent } from './auth/registration/registration.componen
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [], // Service
+  providers: [CounterService], // Service
   bootstrap: [AppComponent],
 })
 export class AppModule {}
