@@ -48,6 +48,25 @@
               </div>
             </div>
           </div>
+
+          <!-- hobbies -->
+          <div formArrayName="hobbies" class="mb-4">
+            <div *ngFor="let hobby of hobbies.controls; index as i">
+              <div [formGroupName]="i">
+                <input type="text" name="hname" formControlName="name" />
+                <input
+                  type="number"
+                  name="hfrequency"
+                  formControlName="frequency"
+                />
+              </div>
+            </div>
+
+            <button class="btn btn-sm btn-primary" (click)="addNewHobby()">
+              Add Hobby
+            </button>
+          </div>
+
           <!-- buttons -->
           <div class="form-group">
             <div class="row">

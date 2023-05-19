@@ -5,6 +5,7 @@ import {
   FormBuilder,
   Validators,
   AbstractControl,
+  FormArray,
 } from '@angular/forms';
 
 @Component({
@@ -26,7 +27,23 @@ export class RegistrationComponent {
     this.registrationForm = this.fb.group({
       username: this.username,
       password: this.password,
+      hobbies: this.fb.array([]),
     });
+  }
+
+  get hobbies(): FormArray {
+    return this.registrationForm.get('hobbies') as FormArray;
+  }
+
+  newHobby() {
+    return this.fb.group({
+      name: '',
+      frequency: '',
+    });
+  }
+
+  addNewHobby() {
+    this.hobbies.push(this.newHobby());
   }
 
   onRegistration() {
@@ -34,6 +51,7 @@ export class RegistrationComponent {
   }
 
   static hasExclamation(control: AbstractControl) {
+    // console.log(control);
     const hasExcl = control.value.indexOf('!') >= 0;
     return hasExcl ? null : { exclamation: true };
   }

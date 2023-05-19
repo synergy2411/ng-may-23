@@ -1,5 +1,7 @@
 https://github.com/synergy2411/ng-may-23
 
+https://tinyurl.com/5n92vhnr
+
 > npx tsc --init
 
 > npm i typescript -g
@@ -53,3 +55,11 @@ https://github.com/synergy2411/ng-may-23
 
 - ng generate component users
 - ng g c users
+
+# Pure Pipe : will run on Pure changes
+
+let fruits = ["Apple", "Banana"];
+
+fruits.push("Kiwi); // NOT changing the reference - Impure change
+
+fruits = ["Apple", "Banana", "Kiwi"]; // Pure Change
