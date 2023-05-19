@@ -36,6 +36,7 @@ export class RegistrationComponent {
   }
 
   newHobby() {
+    // return new FormControl();
     return this.fb.group({
       name: '',
       frequency: '',
@@ -44,6 +45,10 @@ export class RegistrationComponent {
 
   addNewHobby() {
     this.hobbies.push(this.newHobby());
+  }
+
+  removeItem(index) {
+    this.hobbies.removeAt(index);
   }
 
   onRegistration() {
