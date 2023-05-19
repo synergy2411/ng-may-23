@@ -17,6 +17,7 @@ import { RegistrationComponent } from './auth/registration/registration.componen
 import { CounterService } from './services/counter.service';
 import { DemoOneComponent } from './demo/demo-one/demo-one.component';
 import { DemoTwoComponent } from './demo/demo-two/demo-two.component';
+import { ObservableDemoComponent } from './demo/observable-demo/observable-demo.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { DemoTwoComponent } from './demo/demo-two/demo-two.component';
     RegistrationComponent,
     DemoOneComponent,
     DemoTwoComponent,
+    ObservableDemoComponent,
   ],
   imports: [
     // Import the modules - FormsModule, HttpClientModule, RouterModule etc
