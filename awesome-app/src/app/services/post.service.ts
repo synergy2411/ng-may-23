@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { IPost } from 'src/model/post';
 
 @Injectable({
@@ -8,17 +8,22 @@ import { IPost } from 'src/model/post';
 })
 export class PostService {
   private baseUrl = 'http://localhost:3000';
+  // postSubject = new Subject();
 
   getPostData(): Observable<IPost[]> {
     return this.http.get<IPost[]>(`${this.baseUrl}/posts`);
   }
 
-  createPost(post: IPost) {
-    return this.http.post(`${this.baseUrl}/posts`, post, {
+  createPost(post: IPost): Observable<IPost> {
+    return this.http.post<IPost>(`${this.baseUrl}/posts`, post, {
       headers: {
         'Content-Type': 'application/json',
       },
     });
+  }
+
+  getPost(postId: string) {
+    return this.http.get(`${this.baseUrl}/posts/${postId}`);
   }
 
   constructor(private http: HttpClient) {}

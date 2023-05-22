@@ -21,6 +21,7 @@ import { UserInfoComponent } from './users/user-info/user-info.component';
 import { UsersComponent } from './users/users.component';
 import { PostComponent } from './demo/post/post.component';
 import { NewPostComponent } from './demo/post/new-post/new-post.component';
+import { PostItemComponent } from './demo/post/post-item/post-item.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { NewPostComponent } from './demo/post/new-post/new-post.component';
     ObservableDemoComponent,
     PostComponent,
     NewPostComponent,
+    PostItemComponent,
   ],
   imports: [
     // Import the modules - FormsModule, HttpClientModule, RouterModule etc

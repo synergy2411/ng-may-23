@@ -5,6 +5,8 @@
 
   <app-new-post *ngIf="toggle" (onPostSuccess)="onPostSuccess()"></app-new-post>
 
+  <app-post-item *ngIf="postItemToggle" [post]="selectedPostId"></app-post-item>
+
   <table class="table table-bordered">
     <thead>
       <tr>
@@ -14,7 +16,11 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let post of postCollection">
+      <tr
+        *ngFor="let post of postCollection"
+        (click)="onPostSelect(post.id)"
+        class="sel-post"
+      >
         <td>{{ post.id }}</td>
         <td>{{ post.title }}</td>
         <td>{{ post.body }}</td>

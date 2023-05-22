@@ -10,6 +10,8 @@ import { IPost } from 'src/model/post';
 export class PostComponent implements OnInit {
   postCollection: IPost[];
   toggle: boolean = false;
+  postItemToggle: boolean = false;
+  selectedPostId: string;
 
   constructor(private postService: PostService) {}
 
@@ -26,5 +28,11 @@ export class PostComponent implements OnInit {
   onPostSuccess() {
     this.toggle = false;
     this.getData();
+  }
+
+  onPostSelect(postId: string) {
+    console.log(postId);
+    this.postItemToggle = true;
+    this.selectedPostId = postId;
   }
 }

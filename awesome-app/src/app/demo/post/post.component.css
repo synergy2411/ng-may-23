@@ -1,0 +1,4 @@
+.sel-post:hover {
+  cursor: pointer;
+  background-color: beige;
+}
