@@ -63,3 +63,11 @@ let fruits = ["Apple", "Banana"];
 fruits.push("Kiwi); // NOT changing the reference - Impure change
 
 fruits = ["Apple", "Banana", "Kiwi"]; // Pure Change
+
+# to install json-server
+
+> npm install json-server -g
+
+> cd data
+
+> json-server db.json --watch

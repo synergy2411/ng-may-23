@@ -2,6 +2,7 @@ import {
   AfterViewInit,
   Component,
   ElementRef,
+  OnDestroy,
   OnInit,
   ViewChild,
 } from '@angular/core';
@@ -43,7 +44,13 @@ import { ajax } from 'rxjs/ajax';
   templateUrl: './observable-demo.component.html',
   styleUrls: ['./observable-demo.component.css'],
 })
-export class ObservableDemoComponent implements OnInit {
+export class ObservableDemoComponent implements OnInit, OnDestroy {
+  unsub$: Subscription;
+
+  ngOnDestroy(): void {
+    this.unsub$.unsubscribe();
+  }
+
   ngOnInit(): void {
     // let subject = new Subject();
 
@@ -53,7 +60,7 @@ export class ObservableDemoComponent implements OnInit {
 
     let subject = new AsyncSubject();
 
-    subject.subscribe((data) => console.log('Subs 1 : ', data));
+    this.unsub$ = subject.subscribe((data) => console.log('Subs 1 : ', data));
 
     subject.next(101);
 
