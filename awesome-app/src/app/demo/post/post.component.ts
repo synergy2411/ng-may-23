@@ -35,4 +35,10 @@ export class PostComponent implements OnInit {
     this.postItemToggle = true;
     this.selectedPostId = postId;
   }
+
+  onPostDeleteEvent() {
+    this.postItemToggle = false;
+    this.selectedPostId = '';
+    this.getData();
+  }
 }

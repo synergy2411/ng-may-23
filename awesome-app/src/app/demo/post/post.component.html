@@ -5,7 +5,11 @@
 
   <app-new-post *ngIf="toggle" (onPostSuccess)="onPostSuccess()"></app-new-post>
 
-  <app-post-item *ngIf="postItemToggle" [post]="selectedPostId"></app-post-item>
+  <app-post-item
+    *ngIf="postItemToggle"
+    [post]="selectedPostId"
+    (onPostDeleteEvent)="onPostDeleteEvent()"
+  ></app-post-item>
 
   <table class="table table-bordered">
     <thead>

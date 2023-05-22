@@ -26,5 +26,13 @@ export class PostService {
     return this.http.get(`${this.baseUrl}/posts/${postId}`);
   }
 
+  deletePost(postId: string) {
+    return this.http.delete(`${this.baseUrl}/posts/${postId}`);
+  }
+
+  updatePost(post: IPost) {
+    return this.http.patch(`${this.baseUrl}/posts/${post.id}`, post);
+  }
+
   constructor(private http: HttpClient) {}
 }

@@ -1,8 +1,10 @@
 import {
   Component,
+  EventEmitter,
   Input,
   OnChanges,
   OnInit,
+  Output,
   SimpleChanges,
 } from '@angular/core';
 import { PostService } from 'src/app/services/post.service';
@@ -16,6 +18,8 @@ import { IPost } from 'src/model/post';
 export class PostItemComponent implements OnInit, OnChanges {
   @Input('post') postId: string;
 
+  @Output() onPostDeleteEvent = new EventEmitter();
+
   post: IPost;
 
   constructor(private postService: PostService) {}
@@ -27,5 +31,19 @@ export class PostItemComponent implements OnInit, OnChanges {
   }
   ngOnInit(): void {
     console.log('Selected Post : ', this.postId);
+  }
+
+  onPostDelete() {
+    this.postService.deletePost(this.post.id).subscribe(() => {
+      console.log('DELETED');
+      this.onPostDeleteEvent.emit();
+    });
+  }
+
+  onPostEdit() {
+    this.postService.updatePost(this.post).subscribe(() => {
+      console.log('UPDATED');
+      this.onPostDeleteEvent.emit();
+    });
   }
 }

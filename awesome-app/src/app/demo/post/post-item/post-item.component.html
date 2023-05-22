@@ -1,3 +1,40 @@
-<p>post-item works!</p>
+<div *ngIf="post">
+  <div class="backdrop">
+    <div class="post-edit">
+      <div class="card">
+        <div class="card-body">
+          <input
+            type="text"
+            [(ngModel)]="post.title"
+            name="postTitle"
+            class="form-control mb-3"
+          />
+          <br />
+          <input
+            type="text"
+            [(ngModel)]="post.body"
+            name="postBody"
+            class="form-control mb-3"
+          />
 
-{{ post | json }}
+          <div class="row mb-3">
+            <div class="col">
+              <div class="d-grid">
+                <button class="btn btn-secondary" (click)="onPostEdit()">
+                  Edit
+                </button>
+              </div>
+            </div>
+            <div class="col">
+              <div class="d-grid">
+                <button class="btn btn-danger" (click)="onPostDelete()">
+                  Delete
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
