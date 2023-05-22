@@ -13,5 +13,13 @@ export class PostService {
     return this.http.get<IPost[]>(`${this.baseUrl}/posts`);
   }
 
+  createPost(post: IPost) {
+    return this.http.post(`${this.baseUrl}/posts`, post, {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+  }
+
   constructor(private http: HttpClient) {}
 }

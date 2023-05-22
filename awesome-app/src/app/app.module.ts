@@ -20,6 +20,7 @@ import { UserImageComponent } from './users/user-image/user-image.component';
 import { UserInfoComponent } from './users/user-info/user-info.component';
 import { UsersComponent } from './users/users.component';
 import { PostComponent } from './demo/post/post.component';
+import { NewPostComponent } from './demo/post/new-post/new-post.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { PostComponent } from './demo/post/post.component';
     DemoTwoComponent,
     ObservableDemoComponent,
     PostComponent,
+    NewPostComponent,
   ],
   imports: [
     // Import the modules - FormsModule, HttpClientModule, RouterModule etc

@@ -9,12 +9,22 @@ import { IPost } from 'src/model/post';
 })
 export class PostComponent implements OnInit {
   postCollection: IPost[];
+  toggle: boolean = false;
 
   constructor(private postService: PostService) {}
 
-  ngOnInit(): void {
+  private getData() {
     this.postService
       .getPostData()
       .subscribe((data) => (this.postCollection = data));
+  }
+
+  ngOnInit(): void {
+    this.getData();
+  }
+
+  onPostSuccess() {
+    this.toggle = false;
+    this.getData();
   }
 }
