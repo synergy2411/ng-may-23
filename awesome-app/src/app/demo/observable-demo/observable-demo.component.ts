@@ -15,6 +15,10 @@ import {
   combineLatest,
   forkJoin,
   throwError,
+  Subject,
+  BehaviorSubject,
+  ReplaySubject,
+  AsyncSubject,
 } from 'rxjs';
 
 import {
@@ -40,25 +44,48 @@ import { ajax } from 'rxjs/ajax';
   styleUrls: ['./observable-demo.component.css'],
 })
 export class ObservableDemoComponent implements OnInit {
-  source$ = throwError('Something went wrong');
-
   ngOnInit(): void {
+    // let subject = new Subject();
+
+    // let subject = new BehaviorSubject(201);
+
+    // let subject = new ReplaySubject(2);
+
+    let subject = new AsyncSubject();
+
+    subject.subscribe((data) => console.log('Subs 1 : ', data));
+
+    subject.next(101);
+
+    subject.next(102);
+
+    subject.next(103);
+
+    subject.subscribe((data) => console.log('Subs 2 : ', data));
+
+    subject.next(104);
+
+    subject.complete();
+
+    // THROWING ERROR
+    // source$ = throwError('Something went wrong');
     //   this.source$.pipe(catchError((err) => of(err))).subscribe({
     //     next : (data) => console.log('SUBS : ', data),
     //     error : (err) => console.log('ERROR', err),
     //     complete : () => console.log('COMPLETED')
     // });
 
-    const badPromise = () =>
-      new Promise((resolve, reject) => reject('REJECTED'));
+    // PROMISE REJECTED - ERROR
+    // const badPromise = () =>
+    //   new Promise((resolve, reject) => reject('REJECTED'));
 
-    const source$ = from(badPromise());
+    // const source$ = from(badPromise());
 
-    source$.pipe(catchError((err) => of(err))).subscribe({
-      next: (data) => console.log('SUBS : ', data),
-      error: (err) => console.error('ERROR : ', err),
-      complete: () => console.log('COMPLETED'),
-    });
+    // source$.pipe(catchError((err) => of(err))).subscribe({
+    //   next: (data) => console.log('SUBS : ', data),
+    //   error: (err) => console.error('ERROR : ', err),
+    //   complete: () => console.log('COMPLETED'),
+    // });
   }
 
   // source$ = fromEvent(document, 'click');
