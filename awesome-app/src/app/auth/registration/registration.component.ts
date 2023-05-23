@@ -7,6 +7,7 @@ import {
   AbstractControl,
   FormArray,
 } from '@angular/forms';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-registration',
@@ -23,7 +24,7 @@ export class RegistrationComponent {
 
   registrationForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private authService: AuthService) {
     this.registrationForm = this.fb.group({
       username: this.username,
       password: this.password,
@@ -53,6 +54,13 @@ export class RegistrationComponent {
 
   onRegistration() {
     console.log(this.registrationForm);
+    const { username, password } = this.registrationForm.value;
+    this.authService.onUserRegister(username, password);
+  }
+
+  onLogin() {
+    const { username, password } = this.registrationForm.value;
+    this.authService.onUserLogin(username, password);
   }
 
   static hasExclamation(control: AbstractControl) {
