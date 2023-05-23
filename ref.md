@@ -71,3 +71,20 @@ fruits = ["Apple", "Banana", "Kiwi"]; // Pure Change
 > cd data
 
 > json-server db.json --watch
+
+# to install firebase SDK
+
+> npm install firebase
+
+- SPA : URL Patterns
+  > HTML5 Mode (regular) : http://www.example.com/index/overview
+  > Hashbang Mode (old) : http://www.example.com/index.html/!#/overview
+
+# Routing & Navigation
+
+- Routes : Create the Routing Config
+- RouterModule : loads the component through routing config
+- RouterOutlet : provides space to load the component template
+
+http://www.example.com/home --> HomeComponent
+http://www.example.com/product --> ProductComponent

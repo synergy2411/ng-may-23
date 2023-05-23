@@ -2,6 +2,7 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { RegistrationComponent } from './auth/registration/registration.component';
@@ -24,6 +25,8 @@ import { NewPostComponent } from './demo/post/new-post/new-post.component';
 import { PostItemComponent } from './demo/post/post-item/post-item.component';
 import { AuthInterceptor } from './services/interceptors/auth.interceptor';
 import { LoggerInterceptor } from './services/interceptors/logger.interceptor';
+import { APP_ROUTES } from './app.routing';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +49,7 @@ import { LoggerInterceptor } from './services/interceptors/logger.interceptor';
     PostComponent,
     NewPostComponent,
     PostItemComponent,
+    HeaderComponent,
   ],
   imports: [
     // Import the modules - FormsModule, HttpClientModule, RouterModule etc
@@ -53,6 +57,7 @@ import { LoggerInterceptor } from './services/interceptors/logger.interceptor';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    RouterModule.forRoot(APP_ROUTES),
   ],
   providers: [
     CounterService,
