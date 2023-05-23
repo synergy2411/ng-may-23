@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as firebase from 'firebase/app';
 import { AuthService } from './services/auth.service';
-import { config } from 'dotenv';
-
-config();
 
 @Component({
   selector: 'app-root',
@@ -16,10 +13,9 @@ export class AppComponent implements OnInit {
   toggle = true;
 
   ngOnInit(): void {
-    const { apiKey, authDomain } = process.env;
     firebase.initializeApp({
-      apiKey,
-      authDomain,
+      apiKey: 'AIzaSyDEY8BPxvySa7BdgipNCocgP9AY23pV288',
+      authDomain: 'landis-gyr-may-23.firebaseapp.com',
     });
   }
 

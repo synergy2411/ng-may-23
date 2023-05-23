@@ -1,4 +1,4 @@
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -22,6 +22,8 @@ import { UsersComponent } from './users/users.component';
 import { PostComponent } from './demo/post/post.component';
 import { NewPostComponent } from './demo/post/new-post/new-post.component';
 import { PostItemComponent } from './demo/post/post-item/post-item.component';
+import { AuthInterceptor } from './services/interceptors/auth.interceptor';
+import { LoggerInterceptor } from './services/interceptors/logger.interceptor';
 
 @NgModule({
   declarations: [
@@ -52,7 +54,19 @@ import { PostItemComponent } from './demo/post/post-item/post-item.component';
     ReactiveFormsModule,
     HttpClientModule,
   ],
-  providers: [CounterService], // Service
+  providers: [
+    CounterService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      multi: true,
+      useClass: AuthInterceptor,
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      multi: true,
+      useClass: LoggerInterceptor,
+    },
+  ], // Service
   bootstrap: [AppComponent],
 })
 export class AppModule {}
