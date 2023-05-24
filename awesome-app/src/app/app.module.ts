@@ -27,6 +27,9 @@ import { AuthInterceptor } from './services/interceptors/auth.interceptor';
 import { LoggerInterceptor } from './services/interceptors/logger.interceptor';
 import { APP_ROUTES } from './app.routing';
 import { HeaderComponent } from './header/header.component';
+import { ProductsComponent } from './demo/products/products.component';
+import { OverviewComponent } from './demo/products/overview/overview.component';
+import { SpecificationComponent } from './demo/products/specification/specification.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +53,9 @@ import { HeaderComponent } from './header/header.component';
     NewPostComponent,
     PostItemComponent,
     HeaderComponent,
+    ProductsComponent,
+    OverviewComponent,
+    SpecificationComponent,
   ],
   imports: [
     // Import the modules - FormsModule, HttpClientModule, RouterModule etc

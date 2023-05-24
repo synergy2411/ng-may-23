@@ -4,6 +4,9 @@ import { ObservableDemoComponent } from './demo/observable-demo/observable-demo.
 import { PipeDemoComponent } from './demo/pipe-demo/pipe-demo.component';
 import { UsersComponent } from './users/users.component';
 import { LoginGuard } from './services/guards/login.guard';
+import { ProductsComponent } from './demo/products/products.component';
+import { OverviewComponent } from './demo/products/overview/overview.component';
+import { SpecificationComponent } from './demo/products/specification/specification.component';
 
 export const APP_ROUTES: Routes = [
   {
@@ -27,6 +30,20 @@ export const APP_ROUTES: Routes = [
   {
     path: 'observable-demo', // http://localhost:4200/observable-demo
     component: ObservableDemoComponent,
+  },
+  {
+    path: 'products',
+    component: ProductsComponent,
+    children: [
+      {
+        path: ':productId/overview',
+        component: OverviewComponent,
+      },
+      {
+        path: 'spec',
+        component: SpecificationComponent,
+      },
+    ],
   },
   {
     path: '**', // http://localhost:4200/anything
