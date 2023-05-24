@@ -7,6 +7,7 @@ import { LoginGuard } from './services/guards/login.guard';
 import { ProductsComponent } from './demo/products/products.component';
 import { OverviewComponent } from './demo/products/overview/overview.component';
 import { SpecificationComponent } from './demo/products/specification/specification.component';
+import { ProductResolver } from './services/resolvers/product.resolver';
 
 export const APP_ROUTES: Routes = [
   {
@@ -38,6 +39,7 @@ export const APP_ROUTES: Routes = [
       {
         path: ':productId/overview',
         component: OverviewComponent,
+        resolve: { productData: ProductResolver },
       },
       {
         path: 'spec',
