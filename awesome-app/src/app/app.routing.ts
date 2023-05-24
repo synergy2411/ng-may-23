@@ -3,6 +3,7 @@ import { RegistrationComponent } from './auth/registration/registration.componen
 import { ObservableDemoComponent } from './demo/observable-demo/observable-demo.component';
 import { PipeDemoComponent } from './demo/pipe-demo/pipe-demo.component';
 import { UsersComponent } from './users/users.component';
+import { LoginGuard } from './services/guards/login.guard';
 
 export const APP_ROUTES: Routes = [
   {
@@ -17,6 +18,7 @@ export const APP_ROUTES: Routes = [
   {
     path: 'users', // http://localhost:4200/users
     component: UsersComponent,
+    canActivate: [LoginGuard],
   },
   {
     path: 'pipe-demo', // http://localhost:4200/pipe-demo
