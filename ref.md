@@ -85,6 +85,16 @@ fruits = ["Apple", "Banana", "Kiwi"]; // Pure Change
 - Routes : Create the Routing Config
 - RouterModule : loads the component through routing config
 - RouterOutlet : provides space to load the component template
+- Router : enables to programmatically navigate the user
+- ActivatedRoute : provide the access of activated route
+
+- Route Parameter
+- QueryString ?, key-value &
+
+http://example.com/products/99/overview
+http://example.com/products/102/overview
+
+http://example.com/products?name=iphone14
 
 http://www.example.com/home --> HomeComponent
 http://www.example.com/product --> ProductComponent
