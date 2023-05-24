@@ -30,6 +30,7 @@ import { HeaderComponent } from './header/header.component';
 import { ProductsComponent } from './demo/products/products.component';
 import { OverviewComponent } from './demo/products/overview/overview.component';
 import { SpecificationComponent } from './demo/products/specification/specification.component';
+import { EmployeeModule } from './modules/employee/employee.module';
 
 @NgModule({
   declarations: [
@@ -64,6 +65,7 @@ import { SpecificationComponent } from './demo/products/specification/specificat
     ReactiveFormsModule,
     HttpClientModule,
     RouterModule.forRoot(APP_ROUTES),
+    EmployeeModule,
   ],
   providers: [
     CounterService,

@@ -53,9 +53,14 @@ export class RegistrationComponent {
   }
 
   onRegistration() {
-    console.log(this.registrationForm);
-    const { username, password } = this.registrationForm.value;
-    this.authService.onUserRegister(username, password);
+    if (confirm('Are you sure to leave this page?')) {
+      console.log(this.registrationForm);
+      const { username, password } = this.registrationForm.value;
+      this.authService.onUserRegister(username, password);
+      return true;
+    } else {
+      return false;
+    }
   }
 
   onLogin() {
