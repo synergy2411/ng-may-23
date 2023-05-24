@@ -27,6 +27,7 @@ export class AuthService {
           .then((token) => {
             console.log('TOKEN : ', token);
             this.token = token;
+            // localStorage.setItem('token', token);            // Storing token in browser web storage
             this.router.navigate(['/users']);
           })
           .catch((err) => console.error(err));
@@ -37,15 +38,23 @@ export class AuthService {
   onLogout() {
     firebase
       .signOut(firebase.getAuth())
-      .then(() => (this.token = null))
+      .then(() => {
+        setTimeout(() => {
+          this.token = null;
+          this.router.navigate(['/auth']);
+        }, 1500);
+      })
       .catch(console.error);
   }
 
   getToken() {
     return this.token;
+    // if (localStorage.getItem('token')) return localStorage.getItem('token');
+    // else return null;
   }
 
   isUserAuthenticated() {
     return this.token != null;
+    // return localStorage.getItem('token') != null;
   }
 }
