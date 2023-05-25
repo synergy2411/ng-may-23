@@ -115,3 +115,5 @@ http://www.example.com/product --> ProductComponent
 - afterEach()
 - beforeAll()
 - afterAll()
+
+- @ngrx
