@@ -55,6 +55,7 @@ export class RegistrationComponent {
   onRegistration() {
     if (confirm('Are you sure to leave this page?')) {
       console.log(this.registrationForm);
+      debugger;
       const { username, password } = this.registrationForm.value;
       this.authService.onUserRegister(username, password);
       return true;

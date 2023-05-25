@@ -98,3 +98,20 @@ http://example.com/products?name=iphone14
 
 http://www.example.com/home --> HomeComponent
 http://www.example.com/product --> ProductComponent
+
+- npm i firebase-tools -g
+- firebase login
+- firebase init
+- firebase deploy
+
+# Testing Terminologis
+
+- describe() : testing suites
+- it() : test spec
+
+# Setup & Tear down
+
+- beforeEach()
+- afterEach()
+- beforeAll()
+- afterAll()

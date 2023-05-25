@@ -2,7 +2,7 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule } from '@angular/router';
+import { PreloadAllModules, RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { RegistrationComponent } from './auth/registration/registration.component';
@@ -64,7 +64,7 @@ import { EmployeeModule } from './modules/employee/employee.module';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    RouterModule.forRoot(APP_ROUTES),
+    RouterModule.forRoot(APP_ROUTES, { preloadingStrategy: PreloadAllModules }),
     EmployeeModule,
   ],
   providers: [

@@ -5,6 +5,6 @@ import { NewEmployeeComponent } from './components/new-employee/new-employee.com
 @NgModule({
   declarations: [NewEmployeeComponent],
   imports: [CommonModule],
-  // exports : [NewEmployeeComponent]
+  exports: [NewEmployeeComponent],
 })
 export class EmployeeModule {}
