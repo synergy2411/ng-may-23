@@ -10,6 +10,12 @@ import { StudentService } from './student.service';
 export class StudentComponent implements OnInit {
   studentData: { name: string };
 
+  counter = 0;
+
+  onIncrease() {
+    this.counter = this.counter + 1;
+  }
+
   constructor(private studentService: StudentService) {}
 
   ngOnInit(): void {

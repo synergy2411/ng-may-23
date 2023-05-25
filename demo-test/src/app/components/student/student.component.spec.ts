@@ -1,8 +1,15 @@
-import { TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { StudentComponent } from './student.component';
 import { StudentService } from './student.service';
+import { DebugElement } from '@angular/core';
+import { By } from '@angular/platform-browser';
 
 describe('Student Component', () => {
+  let fixture: ComponentFixture<StudentComponent>;
+  let comp: StudentComponent;
+  let de: DebugElement;
+  let service: StudentService;
+
   beforeEach(async () => {
     TestBed.configureTestingModule({
       declarations: [StudentComponent],
@@ -10,21 +17,35 @@ describe('Student Component', () => {
     }).compileComponents();
   });
 
+  beforeEach(() => {
+    fixture = TestBed.createComponent(StudentComponent);
+    comp = fixture.componentInstance;
+    de = fixture.debugElement;
+    service = fixture.debugElement.injector.get(StudentService);
+  });
+
+  it('should update the counter on h2, when button is clicked', () => {
+    // let h2 = de.nativeElement.query(By.css("h2"));
+    // let h2 = de.nativeElement.querySelector("h2");
+    // let btn = de.nativeElement.query(By.css("#btnIncrease")) as HTMLButtonElement;
+
+    let h2 = de.query(By.css('h2'));
+    let btn = de.query(By.css('#btnIncrease'));
+
+    btn.triggerEventHandler('click', {});
+
+    fixture.detectChanges();
+
+    expect(parseInt(h2.nativeElement.textContent)).toBe(comp.counter);
+  });
+
   it('should populate student data in component', () => {
-    const fixture = TestBed.createComponent(StudentComponent);
+    fixture.detectChanges();
 
-    const comp = fixture.componentInstance;
-
-    const service = fixture.debugElement.injector.get(StudentService);
-
-    expect(comp.studentData.name).toEqual(service.studentData.name);
+    expect(comp.studentData.name).toBe(service.studentData.name);
   });
 
   it('should create the component', () => {
-    const fixture = TestBed.createComponent(StudentComponent);
-
-    const comp = fixture.componentInstance;
-
     expect(comp).toBeTruthy();
   });
 });
