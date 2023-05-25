@@ -3,6 +3,7 @@ import { StudentComponent } from './student.component';
 import { StudentService } from './student.service';
 import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('Student Component', () => {
   let fixture: ComponentFixture<StudentComponent>;
@@ -14,6 +15,7 @@ describe('Student Component', () => {
     TestBed.configureTestingModule({
       declarations: [StudentComponent],
       providers: [StudentService],
+      imports: [HttpClientModule],
     }).compileComponents();
   });
 
@@ -25,18 +27,14 @@ describe('Student Component', () => {
   });
 
   it('should update the counter on h2, when button is clicked', () => {
-    // let h2 = de.nativeElement.query(By.css("h2"));
-    // let h2 = de.nativeElement.querySelector("h2");
-    // let btn = de.nativeElement.query(By.css("#btnIncrease")) as HTMLButtonElement;
-
-    let h2 = de.query(By.css('h2'));
+    let h2 = de.query(By.css('#counter-content'));
     let btn = de.query(By.css('#btnIncrease'));
 
     btn.triggerEventHandler('click', {});
 
     fixture.detectChanges();
 
-    expect(parseInt(h2.nativeElement.textContent)).toBe(comp.counter);
+    expect(comp.counter).toBe(parseInt(h2.nativeElement.textContent));
   });
 
   it('should populate student data in component', () => {
