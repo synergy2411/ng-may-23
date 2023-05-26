@@ -118,8 +118,6 @@ http://www.example.com/product --> ProductComponent
 
 - @ngrx
 
-https://tinyurl.com/mr2zm4x7
-
 > npm init -y
 
 > npm install redux
@@ -127,3 +125,6 @@ https://tinyurl.com/mr2zm4x7
 -> npm install
 
 - npm install @ngrx/store@14
+- npm install @ngrx/store-devtools@14
+
+synergy2411@outlook.com\
