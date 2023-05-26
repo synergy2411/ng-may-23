@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { PreloadAllModules, RouterModule } from '@angular/router';
 import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { AppComponent } from './app.component';
 import { RegistrationComponent } from './auth/registration/registration.component';
@@ -34,6 +35,7 @@ import { SpecificationComponent } from './demo/products/specification/specificat
 import { EmployeeModule } from './modules/employee/employee.module';
 import { rootReducer } from './store/reducers/rootReducer';
 import { CounterComponent } from './demo/counter/counter.component';
+import { CounterResultComponent } from './demo/counter-result/counter-result.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +63,7 @@ import { CounterComponent } from './demo/counter/counter.component';
     OverviewComponent,
     SpecificationComponent,
     CounterComponent,
+    CounterResultComponent,
   ],
   imports: [
     // Import the modules - FormsModule, HttpClientModule, RouterModule etc
@@ -71,6 +74,7 @@ import { CounterComponent } from './demo/counter/counter.component';
     RouterModule.forRoot(APP_ROUTES, { preloadingStrategy: PreloadAllModules }),
     EmployeeModule,
     StoreModule.forRoot({ ctr: rootReducer }),
+    StoreDevtoolsModule.instrument(),
   ],
   providers: [
     CounterService,

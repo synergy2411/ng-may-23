@@ -1,3 +1,10 @@
 <p class="display-4">Counter : {{ (counter$ | async).counter }}</p>
 
 <button class="btn btn-primary" (click)="onIncrease()">Increase</button>
+<button class="btn btn-secondary" (click)="onDecrease()">Decrease</button>
+<button class="btn btn-success" (click)="onAddCounter(10)">Add (10)</button>
+<button class="btn btn-danger" (click)="onSubtractCounter(5)">
+  Subtract (5)
+</button>
+
+<app-counter-result></app-counter-result>

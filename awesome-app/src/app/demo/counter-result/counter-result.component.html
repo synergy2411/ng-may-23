@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-4 offset-4">
+    <div class="d-grid">
+      <button class="btn btn-info" (click)="onStoreResult()">
+        Store Counter Value
+      </button>
+    </div>
+  </div>
+</div>
+
+<ul>
+  <li *ngFor="let r of result; index as i" (click)="onItemSel(i)">
+    {{ r }}
+  </li>
+</ul>

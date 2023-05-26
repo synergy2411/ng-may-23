@@ -21,4 +21,16 @@ export class CounterComponent implements OnInit {
   onIncrease() {
     this.store.dispatch({ type: fromActions.INCREMENT });
   }
+
+  onDecrease() {
+    this.store.dispatch({ type: fromActions.DECREMENT });
+  }
+
+  onAddCounter(val: number) {
+    this.store.dispatch(new fromActions.AddCounter(10));
+  }
+
+  onSubtractCounter(val: number) {
+    this.store.dispatch(new fromActions.SubtractCounter(val));
+  }
 }
