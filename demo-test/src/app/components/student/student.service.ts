@@ -20,6 +20,10 @@ export class StudentService {
   }
 
   getStudentFromAPI() {
-    return this.http.get<Array<ITodo>>('fakeUrl');
+    return this.http.get<Array<ITodo>>('fakeUrl', {
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+      },
+    });
   }
 }
