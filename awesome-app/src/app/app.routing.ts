@@ -9,6 +9,7 @@ import { OverviewComponent } from './demo/products/overview/overview.component';
 import { SpecificationComponent } from './demo/products/specification/specification.component';
 import { ProductResolver } from './services/resolvers/product.resolver';
 import { DoNotLeaveGuard } from './services/guards/do-not-leave.guard';
+import { CounterComponent } from './demo/counter/counter.component';
 
 export const APP_ROUTES: Routes = [
   {
@@ -53,6 +54,10 @@ export const APP_ROUTES: Routes = [
     path: 'lazy',
     loadChildren: () =>
       import('./modules/lazy/lazy.module').then((m) => m.LazyModule),
+  },
+  {
+    path: 'counter',
+    component: CounterComponent,
   },
   {
     path: '**', // http://localhost:4200/anything
